@@ -1,0 +1,16 @@
+sudo: required
+dist: xenial
+language: python
+virtualenv:
+  system_site_packages: true
+python:
+- '3.6'
+install:
+- pip install -r requirements.txt
+script: pytest
+after_script: cd ~
+deploy:
+  provider: heroku
+  api_key:
+    secure: j6MCYRKApntERdR6S8lo/eyZ1ULIgAEXIpWgNLR2qxccSAcAnzB0xy9LsTlDIJCw87rcfXBW2rR3+lwac9oHstchOT7G6haZrDOTOPB3Vz7DdZ0vXRCgrEYKQaNgh4ojNAIl0JTBkb3v76C3sWpxpP8Iti6liL5fxajWzdeG2urvcAWlXRg7LKU+XWJy8/OnoNptR0Nze/QGNY/O3MNY69XrF+zg7hPySXO0GJRF/JHUZOGpYhHuhl7a7i/X35oDRV9ljpdhWtm5Z7KVtlqX2SsexwbU3xKWftQnN9oOFsOUCFoehoxCsN1rn+BbPZZtRiubHzALMKwTAdj2gDcV6v1eZWvaT4PM0w9V9EjrXwBMIH2IyNyljunkMYi57wuITx9kBWLEV95JKwhZ8YV4GOKwxlTPGti+Z7hnw/XJVkfhpUMBLCFcwj0UopeVIn2WcXUpmr8pltRmV3Nxxmqt1rTHqHExupqlzKqiRnLh5ebf9Fgt/LNzU8Dikqhevp/644u9fD8k4md0QZOWxSrbXOfzoNiqkFqa0dg1532KSXnkO+B2YVQS+u1jpZIKXhaI45JCugCjMT4r3uB9qz7DsApH18RGrrxCEdv8WL6TCDqIk7Ho2lbJWfWjtOZW6Xs1saPhf5rJZp9ieepvKI2go8iXakm/4foXt9gKZJEDVZo=
+  app: geyser-webapp
