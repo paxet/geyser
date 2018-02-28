@@ -1,8 +1,7 @@
-sudo: required
-dist: xenial
+sudo: false
 language: python
 virtualenv:
-  system_site_packages: true
+  system_site_packages: false
 python:
 - '3.6'
 install:
